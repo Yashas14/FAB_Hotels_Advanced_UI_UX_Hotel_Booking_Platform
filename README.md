@@ -6,7 +6,7 @@ FAB Hotels is a **production-ready, high-end hotel booking platform** inspired b
 
 Designed to simulate a **real-world SaaS product**, this project demonstrates **UI/UX excellence, system design thinking, and scalable frontend architecture**.
 
----
+
 
 ## 🌟 Why This Project Stands Out
 
@@ -16,7 +16,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 🧠 **Advanced UI engineering** — Animations, state handling, modular logic
 📱 **Fully responsive & accessible** — Works seamlessly across devices
 
----
+
 
 ## 🎥 Experience Highlights
 
@@ -27,7 +27,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Smart search with **live suggestions**
 * Animated stats using **Intersection Observer**
 
----
+
 
 ### 🔍 Intelligent Booking System
 
@@ -36,7 +36,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Flatpickr-powered **date range selection**
 * Real-time price slider & flexible date toggle
 
----
+
 
 ### 🌍 Interactive Destination Explorer
 
@@ -46,7 +46,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Urgency indicators like *“Only 3 rooms left”*
 * 3D hover interactions using **Vanilla Tilt**
 
----
+
 
 ### 🎨 Design System (Core Strength)
 
@@ -56,7 +56,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Fully scalable **design tokens system**
 * Smooth transitions across entire UI
 
----
+
 
 ### ⭐ Reviews & Social Proof
 
@@ -65,7 +65,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Carousel with autoplay (Swiper.js)
 * Verified badges (Google, TripAdvisor style)
 
----
+
 
 ### 💬 Real-Time UX Features
 
@@ -74,7 +74,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Profile drawer & navigation overlays
 * Currency switcher with live conversion logic
 
----
+
 
 ### 📱 Mobile-First Engineering
 
@@ -83,7 +83,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * Bottom navigation for mobile UX
 * Fluid typography using `clamp()`
 
----
+
 
 ### ♿ Accessibility First
 
@@ -92,7 +92,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 * ARIA labels across components
 * Reduced motion support
 
----
+
 
 ## 🛠️ Tech Stack (No Frameworks)
 
@@ -107,7 +107,7 @@ Designed to simulate a **real-world SaaS product**, this project demonstrates **
 
 > ⚡ **Zero build tools. Zero frameworks. Pure engineering.**
 
----
+
 
 ## 🧱 Project Architecture
 
@@ -120,7 +120,7 @@ FAB_HOTELS/
 └── README.md
 ```
 
----
+
 
 ## 🚀 Run Locally
 
@@ -153,7 +153,7 @@ Edit CSS variables in `:root`
 
 Add services, reviews, or UI modules easily via modular JS
 
----
+
 
 ## 📊 What This Project Demonstrates
 
@@ -163,7 +163,7 @@ Add services, reviews, or UI modules easily via modular JS
 ✔ Clean architecture without frameworks
 ✔ Strong attention to detail
 
----
+
 
 ## 🛠️ **Explore More**
 Curious about more of my work? Check out my [GitHub](https://github.com/Yashas14) for additional projects and updates. Let's code something amazing together!
@@ -171,7 +171,7 @@ Curious about more of my work? Check out my [GitHub](https://github.com/Yashas14
 ## 📢 **Connect with Me**
  **LinkedIn**: [Yashas D](https://www.linkedin.com/in/yashasd2004/)
  
----
+
 
 ## 📄 License
 
