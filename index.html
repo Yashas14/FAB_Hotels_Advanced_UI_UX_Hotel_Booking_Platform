@@ -1,582 +1,679 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fab Hotels</title>
-        <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-      <!------HEADER------> 
-    <header>
-        <div id="menu-bar" class="fas fa-bars"></div>
-        <a href="#" class="logo"><span>FAB</span>Hotels</a>
-        <nav class="navbar">
-            <a href="#HOME">HOME</a>
-            <a href="#BOOK">BOOK</a>
-            <a href="#PACKAGES">PACKAGES</a>
-            <a href="#SERVICES">SERVICES</a>
-            <a href="#GALLERY">GALLERY</a>
-            <a href="#REVIEW">REVIEW</a>
-            <a href="#CONTACT">CONTACT</a>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FAB Hotels — Luxury hotel booking platform. Discover 500+ premium hotels across 50+ countries with world-class amenities and unforgettable experiences.">
+  <meta name="theme-color" content="#0A0F1E">
+  <title>FAB Hotels — Luxury Stays, Extraordinary Experiences</title>
 
-        </nav>
-        <div class="icons">
-            <i class="fas fa-search" id="search-btn"></i>
-            <i class="fas fa-user" id="login-btn"></i>
+  <!-- Preload Critical Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip to Content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================ -->
+  <!-- HEADER / NAVIGATION -->
+  <!-- ============================================ -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner">
+      <a href="#home" class="header__logo" aria-label="FAB Hotels Home">
+        <span class="header__logo-accent">FAB</span>Hotels
+      </a>
+
+      <nav class="header__nav" id="navbar" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="header__nav-link active" data-section="home">Home</a>
+        <div class="header__nav-item header__nav-item--mega">
+          <a href="#packages" class="header__nav-link" data-section="packages">
+            Destinations <i class="fas fa-chevron-down header__nav-arrow"></i>
+          </a>
+          <div class="mega-menu" id="mega-menu" role="menu">
+            <div class="mega-menu__grid">
+              <a href="#packages" class="mega-menu__item" data-filter="asia" role="menuitem">
+                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=300&q=80" alt="Asia" loading="lazy">
+                <div class="mega-menu__info"><h4>Asia &amp; Pacific</h4><p>Maldives, Tokyo, Bali, Kyoto</p></div>
+              </a>
+              <a href="#packages" class="mega-menu__item" data-filter="europe" role="menuitem">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=300&q=80" alt="Europe" loading="lazy">
+                <div class="mega-menu__info"><h4>Europe</h4><p>Santorini, Paris, Amalfi Coast</p></div>
+              </a>
+              <a href="#packages" class="mega-menu__item" data-filter="middle-east" role="menuitem">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=300&q=80" alt="Middle East" loading="lazy">
+                <div class="mega-menu__info"><h4>Middle East</h4><p>Dubai, Abu Dhabi, Oman</p></div>
+              </a>
+              <a href="#packages" class="mega-menu__item" data-filter="americas" role="menuitem">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&q=80" alt="Americas" loading="lazy">
+                <div class="mega-menu__info"><h4>Americas</h4><p>New York, Machu Picchu</p></div>
+              </a>
+            </div>
+          </div>
         </div>
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="Search Here....">
-            <label for="search-bar"class="fas fa-search"></label>
+        <a href="#book" class="header__nav-link" data-section="book">Book</a>
+        <a href="#services" class="header__nav-link" data-section="services">Services</a>
+        <a href="#gallery" class="header__nav-link" data-section="gallery">Gallery</a>
+        <a href="#reviews" class="header__nav-link" data-section="reviews">Reviews</a>
+        <a href="#contact" class="header__nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="currency-selector" id="currency-selector">
+          <button class="currency-selector__btn" aria-label="Select currency" aria-expanded="false">
+            <span class="currency-selector__symbol">$</span>
+            <span class="currency-selector__code">USD</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="currency-selector__dropdown" role="listbox">
+            <button class="currency-selector__option active" data-code="USD" data-symbol="$" data-rate="1" role="option"><span>$ USD</span><span>US Dollar</span></button>
+            <button class="currency-selector__option" data-code="EUR" data-symbol="€" data-rate="0.92" role="option"><span>€ EUR</span><span>Euro</span></button>
+            <button class="currency-selector__option" data-code="GBP" data-symbol="£" data-rate="0.79" role="option"><span>£ GBP</span><span>British Pound</span></button>
+            <button class="currency-selector__option" data-code="INR" data-symbol="₹" data-rate="83.12" role="option"><span>₹ INR</span><span>Indian Rupee</span></button>
+            <button class="currency-selector__option" data-code="AED" data-symbol="د.إ" data-rate="3.67" role="option"><span>د.إ AED</span><span>UAE Dirham</span></button>
+          </div>
+        </div>
+
+        <button class="header__action-btn" id="search-toggle" aria-label="Toggle search"><i class="fas fa-search"></i></button>
+        <button class="header__action-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon" id="theme-icon"></i></button>
+        <button class="header__action-btn" id="profile-btn" aria-label="Open profile"><i class="fas fa-user"></i></button>
+
+        <button class="header__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__search" id="header-search" role="search">
+      <div class="header__search-inner">
+        <i class="fas fa-search"></i>
+        <input type="search" id="global-search" placeholder="Search destinations, hotels, experiences..." autocomplete="off" aria-label="Search">
+        <div class="search-suggestions" id="search-suggestions" role="listbox"></div>
+        <button class="header__search-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <nav class="mobile-menu__nav">
+      <a href="#home" class="mobile-menu__link" data-section="home"><span class="mobile-menu__link-number">01</span><span class="mobile-menu__link-text">Home</span></a>
+      <a href="#book" class="mobile-menu__link" data-section="book"><span class="mobile-menu__link-number">02</span><span class="mobile-menu__link-text">Book Now</span></a>
+      <a href="#packages" class="mobile-menu__link" data-section="packages"><span class="mobile-menu__link-number">03</span><span class="mobile-menu__link-text">Destinations</span></a>
+      <a href="#services" class="mobile-menu__link" data-section="services"><span class="mobile-menu__link-number">04</span><span class="mobile-menu__link-text">Services</span></a>
+      <a href="#gallery" class="mobile-menu__link" data-section="gallery"><span class="mobile-menu__link-number">05</span><span class="mobile-menu__link-text">Gallery</span></a>
+      <a href="#reviews" class="mobile-menu__link" data-section="reviews"><span class="mobile-menu__link-number">06</span><span class="mobile-menu__link-text">Reviews</span></a>
+      <a href="#contact" class="mobile-menu__link" data-section="contact"><span class="mobile-menu__link-number">07</span><span class="mobile-menu__link-text">Contact</span></a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__socials">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="profile-drawer" id="profile-drawer" role="dialog" aria-label="Profile panel">
+    <div class="profile-drawer__header">
+      <h3>Welcome Back</h3>
+      <button class="profile-drawer__close" id="drawer-close" aria-label="Close panel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="profile-drawer__content">
+      <div class="profile-drawer__avatar"><i class="fas fa-user-circle"></i></div>
+      <form class="profile-drawer__form" id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="your@email.com" required>
+          <span class="form-error" id="login-email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter your password" required>
+          <span class="form-error" id="login-password-error"></span>
+        </div>
+        <div class="form-group form-group--row">
+          <label class="checkbox-label">
+            <input type="checkbox" id="remember-me"><span class="checkmark"></span> Remember me
+          </label>
+          <a href="#" class="form-link">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+        <p class="profile-drawer__signup">Don't have an account? <a href="#">Register Now</a></p>
+      </form>
+    </div>
+  </aside>
+
+  <!-- ============================================ -->
+  <!-- MAIN CONTENT -->
+  <!-- ============================================ -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero__bg">
+        <div class="hero__slide hero__slide--active" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1920&q=80')"></div>
+        <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=80')"></div>
+        <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80')"></div>
+        <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&q=80')"></div>
+        <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80')"></div>
+        <div class="hero__gradient"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__tagline">The Art of Extraordinary Hospitality</p>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Where Luxury</span>
+          <span class="hero__title-line">Meets <em>Paradise</em></span>
+        </h1>
+        <p class="hero__subtitle">Discover handpicked destinations and world-class hotels curated for the discerning traveler</p>
+
+        <div class="hero__search" id="hero-search">
+          <div class="hero__search-field">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" id="hero-destination" placeholder="Where are you going?" autocomplete="off" aria-label="Destination">
+            <div class="hero__search-suggestions" id="hero-suggestions" role="listbox"></div>
+          </div>
+          <div class="hero__search-field">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="text" id="hero-dates" placeholder="Check in — Check out" readonly aria-label="Dates">
+          </div>
+          <div class="hero__search-field hero__search-field--guests">
+            <i class="fas fa-users"></i>
+            <button type="button" class="hero__guests-btn" id="hero-guests-btn" aria-label="Guests">
+              <span id="hero-guests-text">2 Adults · 0 Children</span>
+            </button>
+          </div>
+          <button class="hero__search-submit btn btn--accent" id="hero-search-btn" aria-label="Search">
+            <i class="fas fa-search"></i><span>Search</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__stats" id="hero-stats">
+        <div class="hero__stat">
+          <span class="hero__stat-value" data-target="500" data-suffix="+">0</span>
+          <span class="hero__stat-label">Luxury Hotels</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value" data-target="50" data-suffix="+">0</span>
+          <span class="hero__stat-label">Countries</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value" data-target="2" data-suffix="M+">0</span>
+          <span class="hero__stat-label">Happy Guests</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value" data-target="4.9" data-suffix="★" data-decimals="1">0</span>
+          <span class="hero__stat-label">Average Rating</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <div class="hero__scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+      </div>
+    </section>
+
+    <!-- BOOK NOW SECTION -->
+    <section class="book-section" id="book" aria-label="Book Now">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">Plan Your Escape</p>
+          <h2 class="section-header__title">Book Your <em>Dream Stay</em></h2>
+          <p class="section-header__subtitle">Find the perfect accommodation tailored to your preferences</p>
+        </div>
+
+        <div class="booking-card glass-card">
+          <div class="booking-card__tabs" role="tablist">
+            <button class="booking-card__tab active" role="tab" data-tab="hotels" aria-selected="true"><i class="fas fa-hotel"></i> Hotels</button>
+            <button class="booking-card__tab" role="tab" data-tab="flights" aria-selected="false"><i class="fas fa-plane"></i> Flights + Hotel</button>
+            <button class="booking-card__tab" role="tab" data-tab="experiences" aria-selected="false"><i class="fas fa-compass"></i> Experiences</button>
+          </div>
+
+          <form class="booking-card__form" id="booking-form" novalidate>
+            <div class="booking-card__row">
+              <div class="booking-card__field">
+                <label for="book-destination"><i class="fas fa-map-marker-alt"></i> Destination</label>
+                <input type="text" id="book-destination" placeholder="Where do you want to go?" autocomplete="off">
+                <div class="booking-suggestions" id="book-suggestions" role="listbox"></div>
+              </div>
+              <div class="booking-card__field">
+                <label for="book-dates"><i class="fas fa-calendar-alt"></i> Dates</label>
+                <input type="text" id="book-dates" placeholder="Check in — Check out" readonly>
+              </div>
+              <div class="booking-card__field">
+                <label><i class="fas fa-users"></i> Guests</label>
+                <button type="button" class="booking-card__guests-trigger" id="guests-trigger" aria-expanded="false">
+                  <span id="guests-display">2 Adults · 0 Children · 1 Room</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="guests-dropdown" id="guests-dropdown">
+                  <div class="guests-dropdown__row">
+                    <div class="guests-dropdown__label"><span>Adults</span><small>Ages 13+</small></div>
+                    <div class="guests-dropdown__controls">
+                      <button type="button" class="guests-dropdown__btn" data-type="adults" data-action="decrease" aria-label="Decrease adults">−</button>
+                      <span class="guests-dropdown__count" id="adults-count">2</span>
+                      <button type="button" class="guests-dropdown__btn" data-type="adults" data-action="increase" aria-label="Increase adults">+</button>
+                    </div>
+                  </div>
+                  <div class="guests-dropdown__row">
+                    <div class="guests-dropdown__label"><span>Children</span><small>Ages 2–12</small></div>
+                    <div class="guests-dropdown__controls">
+                      <button type="button" class="guests-dropdown__btn" data-type="children" data-action="decrease" aria-label="Decrease children">−</button>
+                      <span class="guests-dropdown__count" id="children-count">0</span>
+                      <button type="button" class="guests-dropdown__btn" data-type="children" data-action="increase" aria-label="Increase children">+</button>
+                    </div>
+                  </div>
+                  <div class="guests-dropdown__row">
+                    <div class="guests-dropdown__label"><span>Rooms</span><small>Max 5</small></div>
+                    <div class="guests-dropdown__controls">
+                      <button type="button" class="guests-dropdown__btn" data-type="rooms" data-action="decrease" aria-label="Decrease rooms">−</button>
+                      <span class="guests-dropdown__count" id="rooms-count">1</span>
+                      <button type="button" class="guests-dropdown__btn" data-type="rooms" data-action="increase" aria-label="Increase rooms">+</button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn--small btn--accent guests-dropdown__done" id="guests-done">Done</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="booking-card__row booking-card__row--secondary">
+              <div class="booking-card__field booking-card__field--half">
+                <label for="book-room-type"><i class="fas fa-bed"></i> Room Type</label>
+                <select id="book-room-type">
+                  <option value="standard">Standard Room</option>
+                  <option value="deluxe">Deluxe Room</option>
+                  <option value="suite">Executive Suite</option>
+                  <option value="villa">Private Villa</option>
+                </select>
+              </div>
+              <div class="booking-card__field booking-card__field--half">
+                <label><i class="fas fa-tag"></i> Price Range <span class="price-range-display" id="price-range-display">$50 — $500+</span></label>
+                <div class="price-range-slider" id="price-range-slider">
+                  <input type="range" id="price-min" min="50" max="1000" value="50" step="10" aria-label="Minimum price">
+                  <input type="range" id="price-max" min="50" max="1000" value="500" step="10" aria-label="Maximum price">
+                  <div class="price-range-slider__track"><div class="price-range-slider__fill" id="price-range-fill"></div></div>
+                </div>
+              </div>
+              <div class="booking-card__field booking-card__field--toggle">
+                <label class="toggle-label">
+                  <input type="checkbox" id="flexible-dates" class="toggle-input">
+                  <span class="toggle-switch"></span><span>Flexible Dates</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--large booking-card__submit">
+              <i class="fas fa-search"></i> Search Availability
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES / DESTINATIONS SECTION -->
+    <section class="packages-section" id="packages" aria-label="Destinations">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">Explore the World</p>
+          <h2 class="section-header__title">Curated <em>Destinations</em></h2>
+          <p class="section-header__subtitle">Handpicked luxury escapes across the globe</p>
+        </div>
+
+        <div class="filter-tabs" role="tablist" aria-label="Filter destinations">
+          <button class="filter-tabs__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-tabs__btn" data-filter="asia" role="tab">Asia</button>
+          <button class="filter-tabs__btn" data-filter="europe" role="tab">Europe</button>
+          <button class="filter-tabs__btn" data-filter="americas" role="tab">Americas</button>
+          <button class="filter-tabs__btn" data-filter="middle-east" role="tab">Middle East</button>
+          <button class="filter-tabs__btn" data-filter="islands" role="tab">Islands</button>
+        </div>
+
+        <div class="destinations-grid" id="destinations-grid">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services" aria-label="Services">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">What We Offer</p>
+          <h2 class="section-header__title">Exceptional <em>Services</em></h2>
+          <p class="section-header__subtitle">Every detail crafted for your comfort, safety, and delight</p>
+        </div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section" id="gallery" aria-label="Gallery">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">Visual Journey</p>
+          <h2 class="section-header__title">Our <em>Gallery</em></h2>
+          <p class="section-header__subtitle">Immerse yourself in the beauty of our properties</p>
+        </div>
+
+        <div class="filter-tabs" role="tablist" aria-label="Filter gallery">
+          <button class="filter-tabs__btn active" data-gallery-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-tabs__btn" data-gallery-filter="rooms" role="tab">Rooms</button>
+          <button class="filter-tabs__btn" data-gallery-filter="dining" role="tab">Dining</button>
+          <button class="filter-tabs__btn" data-gallery-filter="pool" role="tab">Pool</button>
+          <button class="filter-tabs__btn" data-gallery-filter="exterior" role="tab">Exterior</button>
+          <button class="filter-tabs__btn" data-gallery-filter="activities" role="tab">Activities</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews-section" id="reviews" aria-label="Reviews">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">Guest Experiences</p>
+          <h2 class="section-header__title">What Our Guests <em>Say</em></h2>
+        </div>
+
+        <div class="reviews-summary glass-card">
+          <div class="reviews-summary__score">
+            <span class="reviews-summary__number">4.8</span>
+            <div class="reviews-summary__stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="reviews-summary__count">Based on <strong>12,847</strong> reviews</span>
+          </div>
+          <div class="reviews-summary__breakdown" id="reviews-breakdown"></div>
+          <div class="reviews-summary__distribution" id="reviews-distribution"></div>
+        </div>
+
+        <div class="swiper reviews-swiper" id="reviews-swiper">
+          <div class="swiper-wrapper" id="reviews-wrapper"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="reviews-cta">
+          <button class="btn btn--outline" id="write-review-btn"><i class="fas fa-pen"></i> Write a Review</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Write a Review Panel -->
+    <div class="review-panel" id="review-panel" role="dialog" aria-label="Write a review">
+      <div class="review-panel__inner glass-card">
+        <button class="review-panel__close" id="review-panel-close" aria-label="Close"><i class="fas fa-times"></i></button>
+        <h3>Share Your Experience</h3>
+        <form id="review-form" novalidate>
+          <div class="form-group">
+            <label for="review-name">Your Name</label>
+            <input type="text" id="review-name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label>Your Rating</label>
+            <div class="star-rating" id="star-rating">
+              <button type="button" class="star-rating__star" data-rating="1" aria-label="1 star"><i class="far fa-star"></i></button>
+              <button type="button" class="star-rating__star" data-rating="2" aria-label="2 stars"><i class="far fa-star"></i></button>
+              <button type="button" class="star-rating__star" data-rating="3" aria-label="3 stars"><i class="far fa-star"></i></button>
+              <button type="button" class="star-rating__star" data-rating="4" aria-label="4 stars"><i class="far fa-star"></i></button>
+              <button type="button" class="star-rating__star" data-rating="5" aria-label="5 stars"><i class="far fa-star"></i></button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="review-text">Your Review</label>
+            <textarea id="review-text" rows="5" placeholder="Tell us about your experience..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Submit Review</button>
         </form>
-    </header> 
-<!-----login form container ------->
-<div class="login-form-container">
-    <i class="fas fa-times" id="form-close"></i>
-    <form action="">
-        <h3>LOGIN</h3>
-        <input type="email" class="box" placeholder="Enter Your Email">
-        <input type="password" class="box" placeholder="Enter Password">
-        <input type="submit" value="login now" class="btn">
-        <input type="checkbox" id="remember">
-        <label for="remember"> Remember Me</label>
-        <p>Forgot Password? <a href="#">Click Here </a></p>
-        <p>Don't Have An Account? <a href="#">Register Now</a></p>
-
-    </form>
-
-</div>
-<!------Home section------>
-<section class="home" id="home">
-    <div class="content">
-        <h3>Welcome To The World Of Luxury</h3>
-        <p>Luxury Awaits! Discover Places With Us</p>
-        <a href="#" class="btn">Dicover Here</a>
-    </div>
-    <div class="controls">
-        <span class="vid-btn active" data-src="images/vid1.mp4"></span>
-        <span class="vid-btn" data-src="images/vid2.mp4"></span>
-        <span class="vid-btn" data-src="images/vid3.mp4"></span>
-        <span class="vid-btn" data-src="images/vid4.mp4"></span>
-        <span class="vid-btn" data-src="images/vid5.mp4"></span>
-    </div>
-    <div class="video-container">
-        <video src="images/vid1.mp4" id="video-slider" loop autoplay muted></video>
-
+      </div>
     </div>
 
-</section>
-<!-----Book section starts -------->
-<section class="book" id="book">
-    <h1 class="heading">
-        <span>B</span>
-        <span>O</span>
-        <span>O</span>
-        <span>K</span>
-        <span class="space"></span>
-        <span>N</span>
-        <span>O</span>
-        <span>W</span>
-    </h1>
-    <div class="row">
-        <div class="img">
-            <img src="images/new25.jpeg" alt="">
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__tagline">Get in Touch</p>
+          <h2 class="section-header__title">Contact <em>Us</em></h2>
+          <p class="section-header__subtitle">We'd love to hear from you.</p>
         </div>
-        <form action="">
-            <div class="inputBox">
-                <h3>Destination ?</h3>
-                <input type="text" placeholder="Place Name">
-            </div>
-            <div class="inputBox">
-                <h3>How Many ?</h3>
-                <input type="number" placeholder="Number Of Guests">
-            </div>
-            <div class="inputBox">
-                <h3>Check In</h3>
-                <input type="date">
-            </div>
-            <div class="inputBox">
-                <h3>Check Out</h3>
-                <input type="date">
-            </div>
-            <input type="submit" class="btn" value="BOOK NOW !">
 
-        </form>
+        <div class="contact-grid">
+          <div class="contact-info glass-card">
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><h4>Our Address</h4><p>123 Luxury Avenue, Suite 500<br>Mumbai, Maharashtra 400001</p></div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="fas fa-phone-alt"></i></div>
+              <div><h4>Phone</h4><p>+91 (22) 1234-5678</p><p>+1 (800) FAB-STAY</p></div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="fas fa-envelope"></i></div>
+              <div><h4>Email</h4><p>hello@fabhotels.com</p><p>bookings@fabhotels.com</p></div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="fas fa-clock"></i></div>
+              <div><h4>Working Hours</h4><p>24/7 — We Never Close</p></div>
+            </div>
+            <div class="contact-info__socials">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="contact-info__map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="200" style="border:0; border-radius: 12px; opacity: 0.8;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FAB Hotels Location"></iframe>
+            </div>
+          </div>
+
+          <div class="contact-form glass-card">
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Full Name</label>
+                  <input type="text" id="contact-name" placeholder="John Doe" required>
+                  <span class="form-error" id="contact-name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" placeholder="your@email.com" required>
+                  <span class="form-error" id="contact-email-error"></span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" placeholder="+1 (123) 456-7890">
+                  <span class="form-error" id="contact-phone-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject">Subject</label>
+                  <select id="contact-subject" required>
+                    <option value="">Select a topic</option>
+                    <option value="booking">Booking Inquiry</option>
+                    <option value="support">Customer Support</option>
+                    <option value="partnership">Business Partnership</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="form-error" id="contact-subject-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+                <span class="form-error" id="contact-message-error"></span>
+              </div>
+              <button type="submit" class="btn btn--primary btn--large btn--full"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="#home" class="footer__logo"><span class="footer__logo-accent">FAB</span>Hotels</a>
+          <p class="footer__brand-text">Crafting extraordinary travel experiences since 2015. Your journey to luxury begins here.</p>
+          <div class="footer__newsletter">
+            <h4>Stay Inspired</h4>
+            <form class="footer__newsletter-form" id="newsletter-form" novalidate>
+              <input type="email" id="newsletter-email" placeholder="Enter your email" aria-label="Email for newsletter" required>
+              <button type="submit" class="btn btn--accent" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Destinations</h4>
+          <nav class="footer__links" aria-label="Destination links">
+            <a href="#">Maldives</a><a href="#">Tokyo</a><a href="#">Dubai</a><a href="#">Santorini</a><a href="#">Paris</a><a href="#">Bali</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Quick Links</h4>
+          <nav class="footer__links" aria-label="Quick links">
+            <a href="#home">Home</a><a href="#book">Book Now</a><a href="#packages">Destinations</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact Us</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Support</h4>
+          <nav class="footer__links" aria-label="Support links">
+            <a href="#">Help Center</a><a href="#">Cancellation Policy</a><a href="#">Travel Insurance</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+          </nav>
+          <div class="footer__app-badges">
+            <a href="#" class="footer__app-badge" aria-label="Download on App Store">
+              <i class="fab fa-apple"></i><div><small>Download on the</small><span>App Store</span></div>
+            </a>
+            <a href="#" class="footer__app-badge" aria-label="Get it on Google Play">
+              <i class="fab fa-google-play"></i><div><small>Get it on</small><span>Google Play</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__trust">
+        <div class="footer__trust-badge"><i class="fas fa-shield-alt"></i><span>SSL Secure</span></div>
+        <div class="footer__trust-badge"><i class="fas fa-medal"></i><span>Best Price Guarantee</span></div>
+        <div class="footer__trust-badge"><i class="fas fa-headset"></i><span>24/7 Support</span></div>
+        <div class="footer__trust-badge"><i class="fas fa-undo"></i><span>Free Cancellation</span></div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer__copyright">&copy; <span id="footer-year"></span> FAB Hotels. All rights reserved. Crafted with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> by <a href="https://github.com/Yashas14" target="_blank" rel="noopener">Yashas D</a></p>
+      </div>
     </div>
+  </footer>
 
-</section>
-<!------------packages section ------------>
-<section class="packages" id="packages">
-    <h1 class="heading">
-        <span>P</span>
-        <span>A</span>
-        <span>C</span>
-        <span>K</span>
-        <span>A</span>
-        <span>G</span>
-        <span>E</span>
-        <span>S</span>
-    </h1>
-    <div class="box-container">
-        <div class="box">
-            <img src="images/maldives.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Maldives</h3>
-                <p>The Maldives, an enchanting tropical paradise in the Indian Ocean, is famous for its breathtaking coral atolls, turquoise waters, and pristine white-sand beaches. With over 1,000 coral islands, it's a haven for travelers seeking a perfect blend of natural beauty and luxury. The country's unique overwater bungalows and world-class diving and snorkeling sites attract visitors from all over the world. </p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+  <!-- FLOATING ELEMENTS -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg class="back-to-top__progress" viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke-width="2" id="progress-circle"/></svg>
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-                </div>
-                <div class="price">$178<span>$230</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
+  <!-- Live Chat Widget -->
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-widget__trigger" id="chat-trigger" aria-label="Open live chat">
+      <i class="fas fa-comments"></i><span class="chat-widget__badge">1</span>
+    </button>
+    <div class="chat-widget__panel glass-card" id="chat-panel">
+      <div class="chat-widget__header">
+        <div class="chat-widget__agent">
+          <div class="chat-widget__agent-avatar"><i class="fas fa-robot"></i><span class="chat-widget__status-dot"></span></div>
+          <div><h4>FAB Concierge</h4><small>Online — Typically replies instantly</small></div>
         </div>
-        <div class="box">
-            <img src="images/tokyo.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Tokyo</h3>
-                <p>Tokyo, the bustling capital of Japan, is a city where tradition meets modernity in a fascinating way. With a skyline adorned by towering skyscrapers and ancient temples nestled among the city's vibrant neighborhoods, Tokyo offers a unique blend of old and new. From the neon-lit streets of Shibuya to the serene gardens of the Imperial Palace, Tokyo caters to a wide range of interests. The city is also a culinary mecca, offering a rich tapestry of Japanese cuisine, from sushi to ramen. </p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-
-                </div>
-                <div class="price">$230<span>$275</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
-        </div>
-        <div class="box">
-            <img src="images/dubai.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Dubai</h3>
-                <p>Dubai, a glittering gem in the United Arab Emirates, is a city synonymous with opulence and innovation. Known for its iconic skyscrapers, including the Burj Khalifa, the world's tallest building, and the man-made Palm Jumeirah island, Dubai is a testament to modern architectural marvels. This desert oasis seamlessly combines tradition and modernity, with vibrant souks and historic sites juxtaposed against luxury shopping malls and a dynamic nightlife scene. </p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-
-                </div>
-                <div class="price">$150<span>$200</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
-        </div>
-        <div class="box">
-            <img src="images/italy.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Italy</h3>
-                <p>Italy, a captivating country in southern Europe, is renowned for its rich history, art, culture, and cuisine. The birthplace of the Roman Empire, Italy boasts a vast heritage of ancient ruins, beautiful Renaissance art, and picturesque landscapes. Iconic cities like Rome, Florence, and Venice hold treasures like the Colosseum, Michelangelo's David, and the romantic canals of Venice. Italy's culinary excellence shines with its world-famous pasta, pizza, and fine wines, while the charming countryside is adorned with vineyards and olive groves. </p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-
-                </div>
-                <div class="price">$211<span>$275</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
-        </div>
-        <div class="box">
-            <img src="images/japan.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Japan</h3>
-                <p>Japan, an island nation in East Asia, is a captivating blend of ancient traditions and cutting-edge modernity. With a rich cultural heritage, Japan offers visitors a glimpse into centuries-old customs, from tea ceremonies to the timeless beauty of cherry blossoms in spring. Iconic landmarks like Kyoto's historic temples and Tokyo's futuristic skyline coexist in harmony. Japan's cuisine is renowned worldwide, with sushi, ramen, and tempura being just a few examples of its culinary treasures. </p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-
-                </div>
-                <div class="price">$240<span>$318</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
-        </div>
-        <div class="box">
-            <img src="images/paris.jpeg" alt="">
-            <div class="content">
-                <h3><i class="fas fa-map-marker-alt"></i> Paris</h3>
-                <p>Paris, often referred to as the "City of Love" and the "City of Lights," is the iconic capital of France. Known for its timeless elegance and rich history, Paris is a cultural hub that beckons travelers from around the globe. Its stunning landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, are testaments to the city's architectural and artistic brilliance. Parisian streets are lined with charming cafes, haute couture boutiques, and patisseries, offering some of the finest cuisine and fashion in the world. The Seine River winds through the heart of the city, adding to the romantic allure of Paris.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-
-                </div>
-                <div class="price">$200<span>$235</span></div>
-                <a href="#" class="btn">BOOK NOW</a> 
-
-            </div>
-        </div>
+        <button class="chat-widget__close" id="chat-close" aria-label="Close chat"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chat-widget__messages" id="chat-messages">
+        <div class="chat-message chat-message--bot"><p>Hello! 👋 Welcome to FAB Hotels. How can I help you plan your perfect stay?</p><span class="chat-message__time">Just now</span></div>
+      </div>
+      <div class="chat-widget__input">
+        <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat message">
+        <button class="chat-widget__send" id="chat-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-</section>
-<!-------services section ------------>
-<section class="services" id="services">
-    <h1 class="heading">
-        <span>S</span>
-        <span>E</span>
-        <span>R</span>
-        <span>V</span>
-        <span>I</span>
-        <span>C</span>
-        <span>E</span>
-        <span>S</span>
-    </h1>
-    <div class="box-container">
-        <div class="box">
-            <i class="fas fa-hotel"></i>
-                <h3>AFFORDABLE HOTELS</h3>
-                <p>Affordable hotels offer budget-conscious travelers a comfortable and cost-effective accommodation option. These establishments provide basic amenities, clean and well-maintained rooms, and often convenient locations. While they may not offer the luxury and services of higher-end hotels, they cater to travelers seeking a practical and wallet-friendly place to stay. Affordable hotels come in various forms, from budget chains to boutique guesthouses, allowing travelers to find options that suit their preferences and price range. </p>
+  </div>
 
-        </div>
-        <div class="box">
-            <i class="fas fa-utensils"></i>
-                <h3>FOOD AND DRINKS</h3>
-                <p>Food and drinks are not just a necessity but a delightful part of our daily lives. They encompass a world of flavors, cultures, and experiences. From savoring a hearty homemade meal to exploring exotic cuisines in restaurants, food connects us to our heritage and to global culinary traditions. It's a form of art, an expression of love, and a way to bring people together. The diversity of food and drinks is boundless, from street food stalls serving spicy noodles to high-end restaurants offering gourmet tasting menus.</p>
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-        </div>
-        <div class="box">
-            <i class="fas fa-bullhorn"></i>
-                <h3>SAFETY GUIDE</h3>
-                <p>A safety guide is an invaluable resource that provides essential information and tips to help individuals stay safe in various situations. These guides cover a wide range of topics, from home safety and emergency procedures to personal security and travel safety. They offer practical advice on how to prevent accidents, respond to emergencies, and protect oneself and others. Safety guides are especially crucial in promoting awareness and preparedness, helping people make informed decisions and take proactive measures to minimize risks in their everyday lives.</p>
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="quick-view-modal" id="quick-view-modal" role="dialog" aria-label="Destination details">
+    <button class="quick-view-modal__close" id="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="quick-view-modal__content" id="modal-content"></div>
+  </div>
 
-        </div>
-        <div class="box">
-            <i class="fas fa-globe-asia"></i>
-                <h3>AROUND THE WORLD</h3>
-                <p>Traveling around the world is a dream for many adventurous souls. It represents a journey of discovery, where one can explore diverse cultures, landscapes, and experiences. Circumnavigating the globe allows travelers to witness the beauty of our planet, from the majestic peaks of the Himalayas to the pristine beaches of the Maldives. It's an opportunity to taste a smorgasbord of cuisines, learn new languages, and make friends in far-flung places. </p>
-
-        </div>
-        <div class="box">
-            <i class="fas fa-plane"></i>
-                <h3>FASTER TRAVEL</h3>
-                <p>In an increasingly fast-paced world, the quest for faster travel options has become a top priority. Advancements in technology have given rise to innovations like high-speed trains, supersonic jets, and even the exploration of hyperloop systems, all aimed at reducing travel time. Faster travel not only saves time but also transforms the way we connect with people and places. It makes distant destinations more accessible, fostering greater mobility and opportunities for business and leisure.</p>
-
-        </div>
-        <div class="box">
-            <i class="fas fa-hiking"></i>
-                <h3>ADVENTURE</h3>
-                <p>Adventure is the essence of exploration and risk-taking, where the unknown beckons and challenges the spirit of curiosity and courage. It's about stepping outside one's comfort zone, whether by embarking on a wilderness trek, diving into uncharted waters, or even pursuing an unconventional career path. Adventure is the pursuit of excitement, self-discovery, and unforgettable experiences. It's a reminder that life's most rewarding moments often come when we embrace the unexpected and venture into the unexplored. </p>
-
-        </div>
+  <!-- Booking Flow Modal -->
+  <div class="booking-flow" id="booking-flow" role="dialog" aria-label="Booking flow">
+    <div class="booking-flow__overlay"></div>
+    <div class="booking-flow__container glass-card">
+      <button class="booking-flow__close" id="booking-flow-close" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="booking-flow__progress">
+        <div class="booking-flow__step active" data-step="1"><span class="booking-flow__step-num">1</span><span class="booking-flow__step-label">Search</span></div>
+        <div class="booking-flow__step" data-step="2"><span class="booking-flow__step-num">2</span><span class="booking-flow__step-label">Select Room</span></div>
+        <div class="booking-flow__step" data-step="3"><span class="booking-flow__step-num">3</span><span class="booking-flow__step-label">Guest Details</span></div>
+        <div class="booking-flow__step" data-step="4"><span class="booking-flow__step-num">4</span><span class="booking-flow__step-label">Confirmation</span></div>
+      </div>
+      <div class="booking-flow__body" id="booking-flow-body"></div>
     </div>
-</section>
-<!-----Gallery section ---------->
-<section class="gallery" id="gallery">
-    <h1 class="heading">
-        <span>G</span>
-        <span>A</span>
-        <span>L</span>
-        <span>L</span>
-        <span>E</span>
-        <span>R</span>
-        <span>Y</span>
-    </h1>
-    <div class="box-container">
-        <div class="box">
-            <img src="images/ad1.jpeg" alt="">
-            <div class="content">
-                <h3>SCUBA DIVING!!!</h3>
-                <p>Scuba diving is a thrilling underwater adventure that unveils a mesmerizing world beneath the waves.</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad2.jpeg" alt="">
-            <div class="content">
-                <h3>CYCLING!!!</h3>
-                <p>Cycling is more than just a means of transportation, it's a lifestyle and a passion for many.</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad3.jpeg" alt="">
-            <div class="content">
-                <h3>WATER SKIING!!!</h3>
-                <p>Water skiing is an exhilarating aquatic sport that combines the thrill of speed with the serenity of skimming across the water's surface.</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad4.jpeg" alt="">
-            <div class="content">
-                <h3>CAMPING!!!</h3>
-                <p>Camping is a timeless outdoor adventure that invites individuals to escape the hustle and bustle of urban life. </p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad5.jpeg" alt="">
-            <div class="content">
-                <h3>TREKKING!!!</h3>
-                <p>Trekking is a journey of self-discovery through nature's most breathtaking landscapes.  </p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad6.jpeg" alt="">
-            <div class="content">
-                <h3>CAR TENT!!!</h3>
-                <p>A car tent, often known as a rooftop tent, is a portable and convenient camping solution</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad7.jpeg" alt="">
-            <div class="content">
-                <h3>MOUNTAIN CLIMBING!!!</h3>
-                <p>Mountain climbing offers a profound sense of accomplishment, as reaching a summit rewards climbers with breathtaking panoramic views</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad8.jpeg" alt="">
-            <div class="content">
-                <h3>SNOW SKIING!!!</h3>
-                <p>Snow skiing is a thrilling winter sport that lures individuals to the snow-covered slopes of mountains around the world.</p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-        <div class="box">
-            <img src="images/ad9.jpeg" alt="">
-            <div class="content">
-                <h3>TREE CLIMBING!!!</h3>
-                <p>Tree climbing is a unique outdoor activity that allows individuals to reconnect with nature by ascending the majestic canopies of trees. </p>
-                <a href="#" class="btn">SEE MORE!</a>
-            </div>
-    
-        </div>
-    
-    </div>
-</section>
-<!--review section -------->
-<section class="review" id="review">
-    <h1 class="heading">
-        <span>R</span>
-        <span>E</span>
-        <span>V</span>
-        <span>I</span>
-        <span>E</span>
-        <span>W</span>
-    </h1>
-    <div class="swiper mySwiper review-slider">
-        <div class="swiper-wrapper wapper">
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p1.webp" alt="">
-                    <h3>SUSAN BEY</h3>
-                    <p>The atmosphere was fantastic
-                    Great rooms and service
-                    Breakfast had good variety and was substantial in choice
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p2.webp" alt="">
-                    <h3>EDWARD RUSE</h3>
-                    <p>Exceptional staff, services and cuisine. Loved my stay and will be back.<br> The chinese restaurant was excellent
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p3.jpeg" alt="">
-                    <h3>RUBY NICHOLAS </h3>
-                    <p>We booked a deluxe room at the hotel including a choice of dinner lunch + breakfast.The entire experience was exquisite.
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p4.webp" alt="">
-                    <h3>ANDERS ALVIS</h3>
-                    <p>It's was my wife's birthday the day when checked in and had requested the staff for a small arrangement of cake & decor in room,the staff went one step ahead & did amazing decor in room.
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p5.webp" alt="">
-                    <h3>ADOMAS</h3>
-                    <p>Safe, exceptional staffs, some of the best food, accessible and value for money.Just a wow !
+  </div>
 
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a href="#home" class="mobile-bottom-nav__item active" data-section="home"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="#book" class="mobile-bottom-nav__item" data-section="book"><i class="fas fa-search"></i><span>Search</span></a>
+    <a href="#packages" class="mobile-bottom-nav__item" data-section="packages"><i class="fas fa-suitcase"></i><span>Bookings</span></a>
+    <a href="#contact" class="mobile-bottom-nav__item" data-section="contact"><i class="fas fa-user"></i><span>Profile</span></a>
+  </nav>
 
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box">
-                    <img src="images/p6.webp" alt="">
-                    <h3>ELIZABETH</h3>
-                    <p>Its a nice and clean hotel. Rooms were very comfortable and clean. Staff was very polite and helpful.
-                    </p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </div>
+  <!-- VENDOR SCRIPTS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.1/dist/lenis.min.js"></script>
 
-</section>
-<!-----------contact section ------------>
-<section class="contact" id="contact">
-    <h1 class="heading">
-        <span>C</span>
-        <span>O</span>
-        <span>N</span>
-        <span>T</span>
-        <span>A</span>
-        <span>C</span>
-        <span>T</span>
-    </h1> 
-    <div class="row">
-        <div class="img">
-            <img src="images/joinus.webp" alt="">
-        </div>
-        <form action="">
-            <div class="inputBox">
-                <input type="text" placeholder="Enter Your Name">
-                <input type="email" placeholder="Enter Your Email-ID">
-
-            </div>
-            <div class="inputBox">
-                <input type="number" placeholder="Enter Your PhoneNO">
-                <input type="text" placeholder="Subject">
-            </div>
-             <textarea placeholder="Message" name="" cols="30" rows="10"></textarea>
-             <input type="submit" class="btn" value="SEND MESSAGE!">
-        </form>
-    </div>
-</section>
-<!--------Footer section ---------->
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>ABOUT US</h3>
-            <p>FAB Hotels is a chain of luxury hotels and a subsidiary of the Indian Hotels Company Limited,headquartered in Mumbai, India.<br>Ten hotels of the FAB Group are members of the Leading Hotels of the World.</p>
-
-
-        </div>
-        <div class="box">
-            <h3>BRANCH LOCATIONS</h3>
-            <a href="#">Maldives</a>
-            <a href="#">USA</a>
-            <a href="#">Dubai</a>
-            <a href="#">Philippines</a>
-            <a href="#">Japan</a>
-            <a href="#">Paris</a>
-        </div>
-        <div class="box">
-            <h3>QUICK LINKS</h3>
-            <a href="#">HOME</a>
-            <a href="#">BOOK</a>
-            <a href="#">PACKAGE</a>
-            <a href="#">SERVICES</a>
-            <a href="#">GALLERY</a>
-            <a href="#">REVIEW</a>
-            <a href="#">CONTACT US</a>
-        </div>
-        <div class="box">
-            <h3>FOLLOW US ON</h3>
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TWITTER</a>
-            <a href="#">FACEBOOK</a>
-            <a href="#">LINKEDIN</a>
-        </div>
-
-    </div>
-    <h1 class="credit">Created By <span> YASHAS D</span> | All Rights Reserved </h1>
-
-</section>
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!---js file ---->
-    <script src="main.js"></script>
-    </body>
-
+  <!-- App Scripts -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
